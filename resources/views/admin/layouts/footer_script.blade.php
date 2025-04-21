@@ -1,0 +1,1 @@
+<script src="{{ asset('assets') }}/js/dropdown_menu.js"></script>

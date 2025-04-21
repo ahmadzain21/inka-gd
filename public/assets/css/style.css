@@ -1,0 +1,33 @@
+:root {
+    interpolate-size: allow-keywords;
+  }
+  
+  ::-webkit-scrollbar {
+      width: 6px; /* Scrollbar width */
+    }
+    
+    ::-webkit-scrollbar-track {
+      background: #f0f0f0; /* Scrollbar track */
+    }
+    
+    ::-webkit-scrollbar-thumb {
+      background: #888; /* Scrollbar thumb */
+      border-radius: 6px; /* Border radius */
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+      background: #555; /* Hover effect */
+    }
+  
+  .dropdown > a::after {
+    content: '';
+    background-image: url("data:image/svg+xml;base64,PHN2ZyBjbGFzcz0idy02IGgtNiB0ZXh0LWdyYXktODAwIGRhcms6dGV4dC13aGl0ZSIgYXJpYS1oaWRkZW49InRydWUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0IiBmaWxsPSJub25lIiB2aWV3Qm94PSIwIDAgMjQgMjQiPgogIDxwYXRoIHN0cm9rZT0iY3VycmVudENvbG9yIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS13aWR0aD0iMiIgZD0ibTE5IDktNyA3LTctNyIvPgo8L3N2Zz4K");
+    width: 20px;
+      height: 20px;
+      display: flex;
+      inset-inline-end: 0;
+      top: 10px;
+      position: absolute;
+      background-size: 16px;
+      background-repeat: no-repeat;
+  }

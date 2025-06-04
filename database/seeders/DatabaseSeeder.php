@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             KebutuhanSeeder::class,
             MaterialSeeder::class,
+            UserSeeder::class
         ]);
     }
 }

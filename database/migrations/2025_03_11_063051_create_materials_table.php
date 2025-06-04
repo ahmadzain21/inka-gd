@@ -25,7 +25,7 @@ return new class extends Migration
             $table->bigInteger('kedatangan_madiun')->default(0);
             $table->bigInteger('kedatangan_katalor')->default(0);
             $table->string('stock')->nullable();
-            $table->bigInteger('qty/ts')->default(0);
+            $table->bigInteger('qty_ts')->default(0);
             $table->foreignId('kebutuhan_id');
             $table->foreign('kebutuhan_id')->references('id')->on('kebutuhans');
             $table->timestamps();

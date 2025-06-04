@@ -18,6 +18,10 @@
     ::-webkit-scrollbar-thumb:hover {
       background: #555; /* Hover effect */
     }
+
+    * {
+      transition: ease-in-out .3s all;
+    }
   
   .dropdown > a::after {
     content: '';
@@ -30,4 +34,32 @@
       position: absolute;
       background-size: 16px;
       background-repeat: no-repeat;
+  }
+
+  .select2-container {
+    width: 100%!important;
+  }
+
+  .pagination {
+    background-color: white !important;
+    color: black !important;
+}
+
+.pagination .active span {
+    background-color: #4f46e5 !important; /* biru */
+    color: white !important;
+}
+
+.pagination a {
+    color: #1f2937 !important; /* gray-800 */
+}
+
+  @media (max-width: 1000px) {
+    .menu-active {
+      flex: 100%;
+      max-width: 100%;
+      z-index: 9;
+      width: 100%;
+      transition: ease-in-out .3s all;
+    }
   }

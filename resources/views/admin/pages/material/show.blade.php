@@ -1,5 +1,9 @@
 @extends('admin.master')
 
+@section('page_title')
+    Detail {{ $data->nama_material }}
+@endsection
+
 @section('content')
 
 <div class="p-6">
@@ -7,7 +11,7 @@
         <h2>Detail Material</h2>
     </div>
     <div class="flex gap-5 items-start flex-wrap mb-4">
-        <div class="bg-white shadow-md rounded p-5 flex-[70%] max-w-[70%]">
+        <div class="bg-white shadow-md rounded p-5 flex-[70%] max-w-[70%] max-[800px]:flex-[100%] max-[800px]:max-w-full">
             <div class="flex justify-between items-center pb-3 mb-3 border-b-[2px] border-solid border-slate-200 text-sm">
                 <strong class="font-semibold">EDT MATERIAL KOMPONEN</strong>
                 <span>{{ $data->edt_material_komponen }}</span>
@@ -45,20 +49,20 @@
                 <span>{{ $data->stock }}</span>
             </div>
         </div>
-        <div class="bg-white shadow-md rounded p-5 flex-[calc(30%_-_20px)] max-w-[calc(30%_-_20px)] flex flex-col gap-2.5">
-            <div class="flex flex-col justify-center gap-3 rounded px-4 py-3 bg-red-500 text-center text-white">
+        <div class="bg-white shadow-md rounded p-5 flex-[calc(30%_-_20px)] max-w-[calc(30%_-_20px)] flex flex-col gap-2.5 max-[800px]:flex-[100%] max-[800px]:max-w-full max-[800px]:flex-row max-[540px]:flex-wrap">
+            <div class="flex flex-col justify-center gap-3 rounded px-4 py-3 bg-red-500 text-center text-white max-[800px]:flex-[calc(25%_-_((10px_*_3)_/_4))] max-[800px]:max-w-[calc(25%_-_((10px_*_3)_/_4))] max-[540px]:flex-[calc(50%_-_(10px_/_2))] max-[540px]:max-w-[calc(50%_-_(10px_/_2))]">
                 <span class="text-sm font-medium">Kedatangan Madiun</span>
                 <strong class="flex-[100%] max-w-full text-[2em] font-bold">{{ $data->kedatangan_madiun }}</strong>
             </div>
-            <div class="flex flex-col justify-center gap-3 rounded px-4 py-3 bg-green-500 text-center text-white">
+            <div class="flex flex-col justify-center gap-3 rounded px-4 py-3 bg-green-500 text-center text-white max-[800px]:flex-[calc(25%_-_((10px_*_3)_/_4))] max-[800px]:max-w-[calc(25%_-_((10px_*_3)_/_4))] max-[540px]:flex-[calc(50%_-_(10px_/_2))] max-[540px]:max-w-[calc(50%_-_(10px_/_2))]">
                 <span class="text-sm font-medium">Kedatangan Bixie</span>
                 <strong class="flex-[100%] max-w-full text-4xl font-bold">{{ $data->kedatangan_bixie }}</strong>
             </div>
-            <div class="flex flex-col justify-center gap-3 rounded px-4 py-3 bg-blue-500 text-center text-white">
+            <div class="flex flex-col justify-center gap-3 rounded px-4 py-3 bg-blue-500 text-center text-white max-[800px]:flex-[calc(25%_-_((10px_*_3)_/_4))] max-[800px]:max-w-[calc(25%_-_((10px_*_3)_/_4))] max-[540px]:flex-[calc(50%_-_(10px_/_2))] max-[540px]:max-w-[calc(50%_-_(10px_/_2))]">
                 <span class="text-sm font-medium">Kedatangan Katalor</span>
                 <strong class="flex-[100%] max-w-full text-4xl font-bold">{{ $data->kedatangan_katalor }}</strong>
             </div>
-            <div class="flex flex-col justify-center gap-3 rounded px-4 py-3 bg-white text-center text-white border-[5px] border-solid border-slate-400">
+            <div class="flex flex-col justify-center gap-3 rounded px-4 py-3 bg-white text-center text-white border-[5px] border-solid border-slate-400 max-[800px]:flex-[calc(25%_-_((10px_*_3)_/_4))] max-[800px]:max-w-[calc(25%_-_((10px_*_3)_/_4))] max-[540px]:flex-[calc(50%_-_(10px_/_2))] max-[540px]:max-w-[calc(50%_-_(10px_/_2))]">
                 <span class="text-sm font-medium text-blue-600">Total</span>
                 <strong class="flex-[100%] max-w-full text-4xl font-bold text-blue-600">{{ ($data->kedatangan_katalor + $data->kedatangan_bixie + $data->kedatangan_madiun) }}</strong>
             </div>
@@ -72,30 +76,30 @@
             <table class="w-full text-sm text-left rtl:text-right text-gray-500 mb-5">
                 <thead>
                     <tr class="border border-solid border-gray-200">
-                        <th scope="col" class="px-6 py-3 bg-blue-500 text-white font-semibold">CAR</th>
-                        <th scope="col" class="px-6 py-3 font-semibold odd:bg-gray-200 w-[100px]">1 PRE SERIES</th>
-                        <th scope="col" class="px-6 py-3 font-semibold odd:bg-gray-200 w-[100px]">2_90 CAR</th>
-                        <th scope="col" class="px-6 py-3 font-semibold odd:bg-gray-200 w-[100px]">3_90 CAR</th>
-                        <th scope="col" class="px-6 py-3 font-semibold odd:bg-gray-200 w-[100px]">4_100 CAR</th>
-                        <th scope="col" class="px-6 py-3 font-semibold odd:bg-gray-200 w-[100px]">5_100 CAR</th>
-                        <th scope="col" class="px-6 py-3 font-semibold odd:bg-gray-200 w-[100px]">6_100 CAR</th>
-                        <th scope="col" class="px-6 py-3 font-semibold odd:bg-gray-200 w-[100px]">7_100 CAR</th>
-                        <th scope="col" class="px-6 py-3 font-semibold odd:bg-gray-200 w-[100px]">8_90 CAR</th>
-                        <th scope="col" class="px-6 py-3 font-semibold odd:bg-gray-200 w-[100px]">9_100 CAR</th>
-                        <th scope="col" class="px-6 py-3 font-semibold odd:bg-gray-200 w-[100px]">10_100 CAR</th>
-                        <th scope="col" class="px-6 py-3 font-semibold odd:bg-gray-200 w-[100px]">11_100 CAR</th>
-                        <th scope="col" class="px-6 py-3 font-semibold odd:bg-gray-200 w-[100px]">12_100 CAR</th>
-                        <th scope="col" class="px-6 py-3 font-semibold odd:bg-gray-200 w-[100px]">13_55 CAR</th>
+                        <th scope="col" class="px-6 py-3 bg-blue-500 text-white font-semibold max-[600px]:text-xs">CAR</th>
+                        <th scope="col" class="px-6 py-3 font-semibold odd:bg-gray-200 w-[100px] max-[600px]:text-xs">1 PRE SERIES</th>
+                        <th scope="col" class="px-6 py-3 font-semibold odd:bg-gray-200 w-[100px] max-[600px]:text-xs">2_90 CAR</th>
+                        <th scope="col" class="px-6 py-3 font-semibold odd:bg-gray-200 w-[100px] max-[600px]:text-xs">3_90 CAR</th>
+                        <th scope="col" class="px-6 py-3 font-semibold odd:bg-gray-200 w-[100px] max-[600px]:text-xs">4_100 CAR</th>
+                        <th scope="col" class="px-6 py-3 font-semibold odd:bg-gray-200 w-[100px] max-[600px]:text-xs">5_100 CAR</th>
+                        <th scope="col" class="px-6 py-3 font-semibold odd:bg-gray-200 w-[100px] max-[600px]:text-xs">6_100 CAR</th>
+                        <th scope="col" class="px-6 py-3 font-semibold odd:bg-gray-200 w-[100px] max-[600px]:text-xs">7_100 CAR</th>
+                        <th scope="col" class="px-6 py-3 font-semibold odd:bg-gray-200 w-[100px] max-[600px]:text-xs">8_90 CAR</th>
+                        <th scope="col" class="px-6 py-3 font-semibold odd:bg-gray-200 w-[100px] max-[600px]:text-xs">9_100 CAR</th>
+                        <th scope="col" class="px-6 py-3 font-semibold odd:bg-gray-200 w-[100px] max-[600px]:text-xs">10_100 CAR</th>
+                        <th scope="col" class="px-6 py-3 font-semibold odd:bg-gray-200 w-[100px] max-[600px]:text-xs">11_100 CAR</th>
+                        <th scope="col" class="px-6 py-3 font-semibold odd:bg-gray-200 w-[100px] max-[600px]:text-xs">12_100 CAR</th>
+                        <th scope="col" class="px-6 py-3 font-semibold odd:bg-gray-200 w-[100px] max-[600px]:text-xs">13_55 CAR</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                    <tr class="max-[600px]:text-xs">
 
                         <th scope="row" class="px-6 py-3 bg-blue-500 text-white">
                             QTY
                         </th>
                         @foreach ($dataValueA as $data)
-                        <td class="px-6 py-3 {{ $data < 0 ? 'bg-red-400' : 'bg-green-400' }} font-semibold text-white">
+                        <td class="px-6 py-3 {{ $data < 0 ? 'bg-red-400' : 'bg-green-400' }} font-semibold text-white max-[600px]:text-xs">
                             {{ $data < 0 ? $data : 'OK' }}
                         </td>
                         @endforeach
@@ -104,7 +108,7 @@
             </table>
         </div>
     </div>
-    <div class="bg-white shadow-md rounded p-5">
+    <div class="bg-white shadow-md rounded p-5 max-[680px]:hidden">
         <div class="mb-5 font-semibold text-lg">
             <h3>Grafik Kebutuhan Per Car</h3>
         </div>

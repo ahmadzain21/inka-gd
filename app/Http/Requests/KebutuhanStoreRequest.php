@@ -34,7 +34,8 @@ class KebutuhanStoreRequest extends FormRequest
             '10_qty_kebutuhan_100' => 'required',
             '11_qty_kebutuhan_100' => 'required',
             '12_qty_kebutuhan_100' => 'required',
-            '13_qty_kebutuhan_55' => 'required'
+            '13_qty_kebutuhan_55' => 'required',
+            'kode_material' => 'required'
         ];
     }
 }

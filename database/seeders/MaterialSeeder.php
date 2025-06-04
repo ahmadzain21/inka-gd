@@ -31,11 +31,11 @@ class MaterialSeeder extends Seeder
                 'spesifikasi' => $item['SPESIFIKASI'],
                 'dimensi' => $item['DIMENSI'],
                 'keterangan' => $item['KETERANGAN '],
-                'kedatangan_bixie' => $item['KEDATANGAN BIXIE'],
+                'kedatangan_bixie' => is_numeric($item['KEDATANGAN BIXIE']) ? $item['KEDATANGAN BIXIE'] : 0,
                 'kedatangan_madiun' => $item['KEDATANGAN MADIUN'],
                 'kedatangan_katalor' => $item['KEDATANGAN KATALOR'],
                 'stock' => $item['STOCK '],
-                'qty/ts' => is_numeric($item['QTY/TS']) ? $item['QTY/TS'] : 0,
+                'qty_ts' => is_numeric($item['QTY/TS']) ? $item['QTY/TS'] : 0,
                 'kebutuhan_id' => $kebutuhan->id,  
             ]);
         }

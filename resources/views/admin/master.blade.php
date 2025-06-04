@@ -5,7 +5,7 @@
         @include('admin.layouts.header')
         <section class="flex ">
             @include('admin.layouts.sidebar')
-            <main class="ms-[20%] mt-[50px] w-full max-w-[80%]">
+            <main class="ms-[20%] mt-[50px] w-full max-w-[80%] max-[1000px]:max-w-full max-[1000px]:ms-[unset]">
                 @yield('content')
             </main>
         </section>

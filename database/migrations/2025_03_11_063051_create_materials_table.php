@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('nama_material');
             $table->string('spesifikasi');
             $table->string('dimensi');
-            $table->string('keterangan');
+            $table->string('keterangan')->nullable();
             $table->bigInteger('kedatangan_bixie')->default(0);
             $table->bigInteger('kedatangan_madiun')->default(0);
             $table->bigInteger('kedatangan_katalor')->default(0);

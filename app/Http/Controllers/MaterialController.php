@@ -101,6 +101,8 @@ class MaterialController extends Controller
             return back()->withErrors(['kode_material' => 'Kode material tidak boleh diubah.']);
         }
 
+        dd($request);
+
         $materialData = $materialRequest->validated();
         $kebutuhanData = $kebutuhanRequest->validated();
 

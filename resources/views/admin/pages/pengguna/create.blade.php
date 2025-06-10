@@ -1,0 +1,98 @@
+@extends('admin.master')
+
+@section('page_title')
+Tambah Pengguna
+@endsection
+
+@section('content')
+<div class="p-6">
+    <div class="pb-3 border-b-2 border-solid border-red-500 font-semibold text-xl mb-4 ">
+        <h2>Tambah Pengguna</h2>
+    </div>
+    <div class="bg-white shadow-md rounded p-5">
+        <form method="POST" action="{{ route('register') }}">
+            @csrf
+    
+            <!-- Name -->
+            <div>
+                <x-input-label for="name" :value="__('Name')" />
+                <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
+                <x-input-error :messages="$errors->get('name')" class="mt-2" />
+            </div>
+    
+            <!-- Email Address -->
+            <div class="mt-4">
+                <x-input-label for="email" :value="__('Email')" />
+                <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
+                <x-input-error :messages="$errors->get('email')" class="mt-2" />
+            </div>
+    
+            <!-- Role -->
+            <div class="mt-4">
+                <x-input-label for="role">Role</x-input-label>
+                <select class="block mt-1 w-full border-gray-300 focus:border-indigo-500  focus:ring-indigo-500 rounded-md shadow-sm" name="role" id="role">
+                    <option value="Admin">Admin</option>
+                    <option value="Karyawan">Karyawan</option>
+                </select>
+            </div>
+    
+            <!-- Password -->
+            <div class="mt-4">
+                <x-input-label for="password" :value="__('Password')" />
+    
+                <x-text-input id="password" class="block mt-1 w-full"
+                                type="password"
+                                name="password"
+                                required autocomplete="new-password" />
+    
+                <x-input-error :messages="$errors->get('password')" class="mt-2" />
+            </div>
+    
+            <!-- Confirm Password -->
+            <div class="mt-4">
+                <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
+    
+                <x-text-input id="password_confirmation" class="block mt-1 w-full"
+                                type="password"
+                                name="password_confirmation" required autocomplete="new-password" />
+    
+                <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
+            </div>
+    
+            <div class="flex items-center justify-end mt-4">
+                <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('login') }}">
+                    {{ __('Already registered?') }}
+                </a>
+    
+                <x-primary-button class="ms-4">
+                    {{ __('Register') }}
+                </x-primary-button>
+            </div>
+        </form>
+    </div>
+</div>
+<script>
+    $(document).ready(function() {
+        $('#submit-btn').on('click', function () {
+        let formData = $('#update-form').serialize();
+
+        $('#loading').removeClass('hidden');
+
+        $.ajax({
+            url: "{{ route('kedatangan.update') }}",
+            method: "POST",
+            data: formData,
+            success: async function (response) {
+                await alert(response.message); // Atau pakai SweetAlert
+                $('#loading').addClass('hidden');
+                $('#detail-btn').removeClass('hidden');
+            },
+            error: async function (xhr) {
+                await alert("Terjadi kesalahan. Pastikan semua data diisi.");
+                $('#loading').addClass('hidden');
+            }
+        });
+    });
+});
+</script>
+@endsection

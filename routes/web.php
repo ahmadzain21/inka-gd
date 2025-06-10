@@ -5,6 +5,8 @@ use App\Http\Controllers\MaterialController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\KebutuhanController;
 use App\Http\Controllers\KedatanganController;
+use App\Http\Controllers\PengaturanController;
+use App\Http\Controllers\PenggunaController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\SheetDbController;
@@ -36,6 +38,8 @@ Route::middleware('auth')->group(function () {
     Route::get('material/search', [SearchController::class, 'search'])->name('material.search');
     Route::get('material/{id}/detail', [SearchController::class, 'detail'])->name('material.detail');
     Route::get('history', [HistoryController::class, 'index'])->name('history.index');
+    Route::get('pengaturan', [PengaturanController::class, 'index'])->name('pengaturan.index');
+    Route::resource('pengguna', PenggunaController::class);
 });
 
 require __DIR__.'/auth.php';

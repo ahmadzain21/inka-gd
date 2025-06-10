@@ -37,4 +37,19 @@ class MaterialStoreRequest extends FormRequest
             'qty_ts' => 'required'
         ];
     }
+
+    public function messages() {
+        return [
+            'edt_material_komponen.required' => 'Edt Material Komponen tidak boleh kosong',
+            'kode_material.required' => 'Kode Material tidak boleh kosong',
+            'kode_material.unique' => 'Kode Material sudah digunakan',
+            'nama_material.required' => 'Nama Material tidak boleh kosong',
+            'spesifikasi.required' => 'Spesifikasi tidak boleh kosong',
+            'dimensi.required' => 'Dimensi tidak boleh kosong',
+            'kedatangan_bixie.required' => 'Kedatangan Bixie tidak boleh kosong (isi angka 0 jika material belum ada)',
+            'kedatangan_katalor.required' => 'Kedatangan Katalor tidak boleh kosong (isi angka 0 jika material belum ada)',
+            'kedatangan_madiun.required' => 'Kedatangan Madiun tidak boleh kosong (isi angka 0 jika material belum ada)',
+            'qty_ts.required' => 'Quantity per Train set tidak boleh kosong'
+        ];
+    }
 }

@@ -39,6 +39,8 @@ Route::middleware('auth')->group(function () {
     Route::get('material/{id}/detail', [SearchController::class, 'detail'])->name('material.detail');
     Route::get('history', [HistoryController::class, 'index'])->name('history.index');
     Route::get('pengaturan', [PengaturanController::class, 'index'])->name('pengaturan.index');
+    Route::patch('pengaturan', [PengaturanController::class, 'update'])->name('pengaturan.update');
+    Route::delete('pengaturan', [PengaturanController::class, 'destroy'])->name('pengaturan.destroy');
     Route::resource('pengguna', PenggunaController::class);
 });
 

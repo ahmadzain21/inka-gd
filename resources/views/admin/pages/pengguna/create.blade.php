@@ -4,14 +4,19 @@
 Tambah Pengguna
 @endsection
 
+@section('script')
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+@endsection
+
 @section('content')
 <div class="p-6">
     <div class="pb-3 border-b-2 border-solid border-red-500 font-semibold text-xl mb-4 ">
         <h2>Tambah Pengguna</h2>
     </div>
     <div class="bg-white shadow-md rounded p-5">
-        <form method="POST" action="{{ route('register') }}">
+        <form id="user-form" method="POST">
             @csrf
+            @method('POST')
     
             <!-- Name -->
             <div>
@@ -60,12 +65,8 @@ Tambah Pengguna
             </div>
     
             <div class="flex items-center justify-end mt-4">
-                <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('login') }}">
-                    {{ __('Already registered?') }}
-                </a>
-    
-                <x-primary-button class="ms-4">
-                    {{ __('Register') }}
+                <x-primary-button type="button" id="submit-btn" class="ms-4">
+                    {{ __('Tambah') }}
                 </x-primary-button>
             </div>
         </form>
@@ -74,22 +75,22 @@ Tambah Pengguna
 <script>
     $(document).ready(function() {
         $('#submit-btn').on('click', function () {
-        let formData = $('#update-form').serialize();
+        let formData = $('#user-form').serialize();
+        console.log(formData);
 
-        $('#loading').removeClass('hidden');
+        $('#submit-btn').text('Proses...');
 
         $.ajax({
-            url: "{{ route('kedatangan.update') }}",
+            url: "{{ route('pengguna.store') }}",
             method: "POST",
             data: formData,
             success: async function (response) {
                 await alert(response.message); // Atau pakai SweetAlert
-                $('#loading').addClass('hidden');
-                $('#detail-btn').removeClass('hidden');
+                $('#submit-btn').text('Tambah');
             },
             error: async function (xhr) {
                 await alert("Terjadi kesalahan. Pastikan semua data diisi.");
-                $('#loading').addClass('hidden');
+                $('#submit-btn').text('Tambah');
             }
         });
     });

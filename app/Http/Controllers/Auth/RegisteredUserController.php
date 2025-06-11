@@ -37,7 +37,7 @@ class RegisteredUserController extends Controller
             'role' => ['required', 'string']
         ]);
 
-        //dd($request->all());
+        dd($request->all());
 
         $user = User::create([
             'name' => $request->name,

@@ -16,4 +16,8 @@ class Material extends Model
     public function kebutuhan() {
         return $this->belongsTo(Kebutuhan::class);
     }
+
+    public function materialItem() {
+        return $this->belongsTo(MaterialItem::class);
+    }
 }

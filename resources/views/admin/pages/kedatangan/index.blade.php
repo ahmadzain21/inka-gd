@@ -1,7 +1,7 @@
 @extends('admin.master')
 
 @section('page_title')
-    Kedatangan
+    Beranda
 @endsection
 
 @section('content')

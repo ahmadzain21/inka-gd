@@ -8,6 +8,9 @@ use App\Http\Requests\MaterialStoreRequest;
 use App\Http\Requests\MaterialUpdateRequest;
 use App\Models\Kebutuhan;
 use App\Models\Material;
+use Illuminate\Support\Facades\Auth;
+use App\Models\History;
+use App\Models\MaterialItem;
 
 class MaterialController extends Controller
 {
@@ -57,6 +60,12 @@ class MaterialController extends Controller
 
         Material::create($materialData);
 
+        History::create([
+            'action' => Auth::user()->name.' menambahkan material baru dengan kode ' . Material::latest()->first()->kode_material . ' pada ' .now(),
+            'user_id' => Auth::user()->id,
+            'tanggal' => now()->format('Y-m-d')
+        ]);
+
         return redirect()->route('materialgd.index')->with('success','Berhasil menambahkan data material');
 
     }
@@ -82,7 +91,10 @@ class MaterialController extends Controller
             array_push($dataValueB, $data->kebutuhan->{$dataName[$i]});
         }
 
-        return view('admin.pages.material.show', ['data' => $data, 'dataName' => $dataName, 'dataValueA' => $dataValueA, 'dataValueB' => $dataValueB]);
+        $materialItem = MaterialItem::where('material_id', $data->id)->get();
+        //dd($materialItem);
+
+        return view('admin.pages.material.show', ['data' => $data, 'dataName' => $dataName, 'dataValueA' => $dataValueA, 'dataValueB' => $dataValueB, 'materialItem' => $materialItem]);
     }
 
     public function edit(string $id) {
@@ -108,6 +120,12 @@ class MaterialController extends Controller
 
         $material->update($materialData);
         $kebutuhan->update($kebutuhanData);
+
+        History::create([
+            'action' => Auth::user()->name.' mengupdate data material dengan kode ' . $material->kode_material . ' pada ' .now(),
+            'user_id' => Auth::user()->id,
+            'tanggal' => now()->format('Y-m-d')
+        ]);
 
         //dd($materialData);
         return redirect()->route('materialgd.index')->with('success','Berhasil memperbarui data material');

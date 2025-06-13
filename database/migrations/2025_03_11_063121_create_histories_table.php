@@ -14,6 +14,9 @@ return new class extends Migration
         Schema::create('histories', function (Blueprint $table) {
             $table->id();
             $table->string('action');
+            $table->foreignId('user_id');
+            $table->date('tanggal');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }

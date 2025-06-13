@@ -8,16 +8,26 @@
         </div>
         <div class="flex gap-2.5 items-center relative cursor-pointer" id="show-profile-btn">
             <div class="inline-flex flex-col gap-0.5 text-sm text-right">
-                <b>{{ Auth::user()->name; }}</b>
-                <span class="text-xs text-slate-600">{{ Auth::user()->email }}</span>
+                <b>{{ Auth::user()->nip; }}</b>
+                <span class="text-xs text-slate-600">{{ Auth::user()->role }}</span>
             </div>
             <div  class="overflow-hidden relative rounded-full h-[35px] w-[35px]">
                 <img class="absolute top-0 w-full h-full object-cover" src="https://w7.pngwing.com/pngs/748/89/png-transparent-individual-man-people-person-icon-thumbnail.png" alt="person">
             </div>
             <div id="profile-menu" class="bg-white w-[150px] shadow-md rounded absolute end-[0] top-[50px] h-0 overflow-hidden">
                 <div class="m-2">
-                    <b class="text-xs">{{ Auth::user()->name; }}</b>
-                    <span class="text-xs text-slate-600 mb-2">{{ Auth::user()->email }}</span>
+                    <div class="flex justify-between mb-1.5 text-sm">
+                        <b class="text-xs text-slate-600">NIP</b>
+                        <span class="text-xs">{{ Auth::user()->nip }}</span>
+                    </div>
+                    <div class="flex justify-between mb-1.5 text-sm">
+                        <b class="text-xs text-slate-600">Role</b>
+                        <span class="text-xs">{{ Auth::user()->role }}</span>
+                    </div>
+                    <div class="flex justify-between mb-1.5 text-sm">
+                        <b class="text-xs text-slate-600">Nama</b>
+                        <span class="text-xs">{{ Auth::user()->name }}</span>
+                    </div>
                     <form action="{{ route('logout') }}" method="post">
                         @csrf
                         <button class="bg-red-500 text-white px-2 py-1 rounded text-xs w-full text-center font-semibold hover:bg-red-700" type="submit">

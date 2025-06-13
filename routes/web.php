@@ -42,6 +42,7 @@ Route::middleware('auth')->group(function () {
     Route::patch('pengaturan', [PengaturanController::class, 'update'])->name('pengaturan.update');
     Route::delete('pengaturan', [PengaturanController::class, 'destroy'])->name('pengaturan.destroy');
     Route::resource('pengguna', PenggunaController::class);
+    Route::post('reset-password/{nip}', [PenggunaController::class, 'resetPassword'])->name('reset.password');
 });
 
 require __DIR__.'/auth.php';

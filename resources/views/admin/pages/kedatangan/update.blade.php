@@ -43,8 +43,12 @@
                 <input type="hidden" name="id" id="id_material" value="">
                 <input type="hidden" name="vendor" id="vendor" value="{{ $vendor }}">
                 <div class="flex flex-col gap-2.5 mb-2.5">
+                    <label class="font-semibold" for="heat_number">Masukkan Heat Number</label>
+                    <input type="text" name="heat_number" id="heat_number" class="rounded border-solid border border-slate-300" required placeholder="Heat Number...">
+                </div>
+                <div class="flex flex-col gap-2.5 mb-2.5">
                     <label class="font-semibold" for="jumlah">Masukkan Jumlah Barang</label>
-                    <input type="number" name="jumlah" id="jumlah" class="rounded border-solid border border-slate-300">
+                    <input type="number" name="jumlah" id="jumlah" class="rounded border-solid border border-slate-300" value="0" required>
                 </div>
                 <button id="submit-btn" class="bg-blue-500 text-white rounded py-2 block border-none outline-none cursor-pointer w-full hover:bg-blue-700" type="button">Submit</button>
             </form>
@@ -66,6 +70,8 @@
 
         $('#loading').removeClass('hidden');
 
+        console.log(formData);
+
         $.ajax({
             url: "{{ route('kedatangan.update') }}",
             method: "POST",
@@ -76,7 +82,8 @@
                 $('#detail-btn').removeClass('hidden');
             },
             error: async function (xhr) {
-                await alert("Terjadi kesalahan. Pastikan semua data diisi.");
+                console.log(xhr);
+                await alert(xhr);
                 $('#loading').addClass('hidden');
             }
         });

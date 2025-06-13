@@ -163,7 +163,7 @@
                 </div>
             </div>
             <div class="flex flex-wrap gap-4 mb-[50px]">
-                <div class="flex-[calc(33.333%_-_((16px_*_2)_/_3))] max-w-[calc(33.333%_-_((16px_*_2)_/_3))] inline-flex items-center flex-wrap gap-2">
+                <div class="flex-[calc(50%_-_(16px_/_2))] max-w-[calc(50%_-_(16px_/_2))] inline-flex items-center flex-wrap gap-2">
                     <label class="flex-full max-w-full text-sm font-medium" for="kedatangan_katalor">Kedatangan Katalor</label>
                     <input class="border-solid border @error('kedatangan_katalor')
                                                 border-red-500
@@ -174,7 +174,7 @@
                         <p class="text-red-500 text-xs">{{ $message }}</p>
                     @enderror
                 </div>
-                <div class="flex-[calc(33.333%_-_((16px_*_2)_/_3))] max-w-[calc(33.333%_-_((16px_*_2)_/_3))] inline-flex items-center flex-wrap gap-2">
+                <div class="flex-[calc(50%_-_(16px_/_2))] max-w-[calc(50%_-_(16px_/_2))] inline-flex items-center flex-wrap gap-2">
                     <label class="flex-full max-w-full text-sm font-medium" for="kedatangan_katalor">Kedatangan Bixie</label>
                     <input class="border-solid border @error('kedatangan_bixie')
                                                 border-red-500
@@ -185,69 +185,58 @@
                         <p class="text-red-500 text-xs">{{ $message }}</p>
                     @enderror
                 </div>
-                <div class="flex-[calc(33.333%_-_((16px_*_2)_/_3))] max-w-[calc(33.333%_-_((16px_*_2)_/_3))] inline-flex items-center flex-wrap gap-2">
-                    <label class="flex-full max-w-full text-sm font-medium" for="kedatangan_katalor">Kedatangan Madiun</label>
-                    <input class="border-solid border @error('kedatangan_madiun')
-                                                border-red-500
-                                                @else
-                                                border-slate-300
-                                            @enderror rounded outline-none w-full max-w-full py-2 px-3 text-sm mb-1" type="number" value="0" min="0" name="kedatangan_madiun">
-                    @error('kedatangan_madiun')
-                        <p class="text-red-500 text-xs">{{ $message }}</p>
-                    @enderror
-                </div>
             </div>
             <div class="flex gap-4 flex-wrap mb-[30px]">
                 <div class="flex-[calc(50%_-_(16px_/_2))] max-w-[calc(50%_-_(16px_/_2))] inline-flex flex-col">
-                    <label class="text-sm font-medium block mb-2" for="1_qty_kebutuhan_1">1 qty kebutuhan 1</label>
+                    <label class="text-sm font-medium block mb-2" for="1_qty_kebutuhan_1">Lot 1</label>
                     <input class="border-solid border border-slate-300 rounded outline-none text-sm py-2 px-3" type="text" name="1_qty_kebutuhan_1" value="0">
                 </div>
                 <div class="flex-[calc(50%_-_(16px_/_2))] max-w-[calc(50%_-_(16px_/_2))] inline-flex flex-col">
-                    <label class="text-sm font-medium block mb-2" for="2_qty_kebutuhan_90">2 qty kebutuhan 90</label>
+                    <label class="text-sm font-medium block mb-2" for="2_qty_kebutuhan_90">Lot 2</label>
                     <input class="border-solid border border-slate-300 rounded outline-none text-sm py-2 px-3" type="number" name="2_qty_kebutuhan_90" value="0">
                 </div>
                 <div class="flex-[calc(50%_-_(16px_/_2))] max-w-[calc(50%_-_(16px_/_2))] inline-flex flex-col">
-                    <label class="text-sm font-medium block mb-2" for="3_qty_kebutuhan_90">3 qty kebutuhan 90</label>
+                    <label class="text-sm font-medium block mb-2" for="3_qty_kebutuhan_90">Lot 3</label>
                     <input class="border-solid border border-slate-300 rounded outline-none text-sm py-2 px-3" type="number" name="3_qty_kebutuhan_90" value="0">
                 </div>
                 <div class="flex-[calc(50%_-_(16px_/_2))] max-w-[calc(50%_-_(16px_/_2))] inline-flex flex-col">
-                    <label class="text-sm font-medium block mb-2" for="4_qty_kebutuhan_100">4 qty kebutuhan 100</label>
+                    <label class="text-sm font-medium block mb-2" for="4_qty_kebutuhan_100">Lot 4</label>
                     <input class="border-solid border border-slate-300 rounded outline-none text-sm py-2 px-3" type="number" name="4_qty_kebutuhan_100" value="0">
                 </div>
                 <div class="flex-[calc(50%_-_(16px_/_2))] max-w-[calc(50%_-_(16px_/_2))] inline-flex flex-col">
-                    <label class="text-sm font-medium block mb-2" for="5_qty_kebutuhan_100">5 qty kebutuhan 100</label>
+                    <label class="text-sm font-medium block mb-2" for="5_qty_kebutuhan_100">Lot 5</label>
                     <input class="border-solid border border-slate-300 rounded outline-none text-sm py-2 px-3" type="number" name="5_qty_kebutuhan_100" value="0">
                 </div>
                 <div class="flex-[calc(50%_-_(16px_/_2))] max-w-[calc(50%_-_(16px_/_2))] inline-flex flex-col">
-                    <label class="text-sm font-medium block mb-2" for="6_qty_kebutuhan_100">6 qty kebutuhan 100</label>
+                    <label class="text-sm font-medium block mb-2" for="6_qty_kebutuhan_100">Lot 6</label>
                     <input class="border-solid border border-slate-300 rounded outline-none text-sm py-2 px-3" type="number" name="6_qty_kebutuhan_100" value="0">
                 </div>
                 <div class="flex-[calc(50%_-_(16px_/_2))] max-w-[calc(50%_-_(16px_/_2))] inline-flex flex-col">
-                    <label class="text-sm font-medium block mb-2" for="7_qty_kebutuhan_100">7 qty kebutuhan 100</label>
+                    <label class="text-sm font-medium block mb-2" for="7_qty_kebutuhan_100">Lot 7</label>
                     <input class="border-solid border border-slate-300 rounded outline-none text-sm py-2 px-3" type="number" name="7_qty_kebutuhan_100" value="0">
                 </div>
                 <div class="flex-[calc(50%_-_(16px_/_2))] max-w-[calc(50%_-_(16px_/_2))] inline-flex flex-col">
-                    <label class="text-sm font-medium block mb-2" for="8_qty_kebutuhan_90">8 qty kebutuhan 90</label>
+                    <label class="text-sm font-medium block mb-2" for="8_qty_kebutuhan_90">Lot 8</label>
                     <input class="border-solid border border-slate-300 rounded outline-none text-sm py-2 px-3" type="number" name="8_qty_kebutuhan_90" value="0">
                 </div>
                 <div class="flex-[calc(50%_-_(16px_/_2))] max-w-[calc(50%_-_(16px_/_2))] inline-flex flex-col">
-                    <label class="text-sm font-medium block mb-2" for="9_qty_kebutuhan_100">9 qty kebutuhan 100</label>
+                    <label class="text-sm font-medium block mb-2" for="9_qty_kebutuhan_100">Lot 9</label>
                     <input class="border-solid border border-slate-300 rounded outline-none text-sm py-2 px-3" type="number" name="9_qty_kebutuhan_100" value="0">
                 </div>
                 <div class="flex-[calc(50%_-_(16px_/_2))] max-w-[calc(50%_-_(16px_/_2))] inline-flex flex-col">
-                    <label class="text-sm font-medium block mb-2" for="10_qty_kebutuhan_100">10 qty kebutuhan 100</label>
+                    <label class="text-sm font-medium block mb-2" for="10_qty_kebutuhan_100">Lot 10</label>
                     <input class="border-solid border border-slate-300 rounded outline-none text-sm py-2 px-3" type="number" name="10_qty_kebutuhan_100" value="0">
                 </div>
                 <div class="flex-[calc(50%_-_(16px_/_2))] max-w-[calc(50%_-_(16px_/_2))] inline-flex flex-col">
-                    <label class="text-sm font-medium block mb-2" for="11_qty_kebutuhan_100">11 qty kebutuhan 100</label>
+                    <label class="text-sm font-medium block mb-2" for="11_qty_kebutuhan_100">Lot 11</label>
                     <input class="border-solid border border-slate-300 rounded outline-none text-sm py-2 px-3" type="number" name="11_qty_kebutuhan_100" value="0">
                 </div>
                 <div class="flex-[calc(50%_-_(16px_/_2))] max-w-[calc(50%_-_(16px_/_2))] inline-flex flex-col">
-                    <label class="text-sm font-medium block mb-2" for="12_qty_kebutuhan_100">12 qty kebutuhan 100</label>
+                    <label class="text-sm font-medium block mb-2" for="12_qty_kebutuhan_100">Lot 12</label>
                     <input class="border-solid border border-slate-300 rounded outline-none text-sm py-2 px-3" type="number" name="12_qty_kebutuhan_100" value="0">
                 </div>
                 <div class="flex-[calc(50%_-_(16px_/_2))] max-w-[calc(50%_-_(16px_/_2))] inline-flex flex-col">
-                    <label class="text-sm font-medium block mb-2" for="13_qty_kebutuhan_55">13 qty kebutuhan 55</label>
+                    <label class="text-sm font-medium block mb-2" for="13_qty_kebutuhan_55">Lot 13</label>
                     <input class="border-solid border border-slate-300 rounded outline-none text-sm py-2 px-3" type="number" name="13_qty_kebutuhan_55" value="0">
                 </div>
             </div>

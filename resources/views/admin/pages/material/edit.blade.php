@@ -76,17 +76,13 @@
                 </div>
             </div>
             <div class="flex flex-wrap gap-4 mb-[50px]">
-                <div class="flex-[calc(33.333%_-_((16px_*_2)_/_3))] max-w-[calc(33.333%_-_((16px_*_2)_/_3))] inline-flex items-center flex-wrap gap-2">
+                <div class="flex-[calc(50%_-_(16px_/_2))] max-w-[calc(50%_-_(16px_/_2))] inline-flex items-center flex-wrap gap-2">
                     <label class="flex-full max-w-full text-sm font-medium" for="kedatangan_katalor">Kedatangan Katalor</label>
                     <input class="border-solid border border-slate-300 rounded outline-none w-full max-w-full py-2 px-3 text-sm" type="number" min="0" name="kedatangan_katalor" value="{{ $material->kedatangan_katalor }}">
                 </div>
-                <div class="flex-[calc(33.333%_-_((16px_*_2)_/_3))] max-w-[calc(33.333%_-_((16px_*_2)_/_3))] inline-flex items-center flex-wrap gap-2">
+                <div class="flex-[calc(calc(50%_-_(16px_/_2))] max-w-[calc(calc(50%_-_(16px_/_2))] inline-flex items-center flex-wrap gap-2">
                     <label class="flex-full max-w-full text-sm font-medium" for="kedatangan_katalor">Kedatangan Bixie</label>
                     <input class="border-solid border border-slate-300 rounded outline-none w-full max-w-full py-2 px-3 text-sm" type="number" min="0" name="kedatangan_bixie" value="{{ $material->kedatangan_bixie }}">
-                </div>
-                <div class="flex-[calc(33.333%_-_((16px_*_2)_/_3))] max-w-[calc(33.333%_-_((16px_*_2)_/_3))] inline-flex items-center flex-wrap gap-2">
-                    <label class="flex-full max-w-full text-sm font-medium" for="kedatangan_katalor">Kedatangan Madiun</label>
-                    <input class="border-solid border border-slate-300 rounded outline-none w-full max-w-full py-2 px-3 text-sm" type="number" min="0" name="kedatangan_madiun" value="{{ $material->kedatangan_madiun }}">
                 </div>
             </div>
             <div class="flex gap-4 flex-wrap mb-[30px]">

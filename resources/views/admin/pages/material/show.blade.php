@@ -50,10 +50,6 @@
             </div>
         </div>
         <div class="bg-white shadow-md rounded p-5 flex-[calc(30%_-_20px)] max-w-[calc(30%_-_20px)] flex flex-col gap-2.5 max-[800px]:flex-[100%] max-[800px]:max-w-full max-[800px]:flex-row max-[540px]:flex-wrap">
-            <div class="flex flex-col justify-center gap-3 rounded px-4 py-3 bg-red-500 text-center text-white max-[800px]:flex-[calc(25%_-_((10px_*_3)_/_4))] max-[800px]:max-w-[calc(25%_-_((10px_*_3)_/_4))] max-[540px]:flex-[calc(50%_-_(10px_/_2))] max-[540px]:max-w-[calc(50%_-_(10px_/_2))]">
-                <span class="text-sm font-medium">Kedatangan Madiun</span>
-                <strong class="flex-[100%] max-w-full text-[2em] font-bold">{{ $data->kedatangan_madiun }}</strong>
-            </div>
             <div class="flex flex-col justify-center gap-3 rounded px-4 py-3 bg-green-500 text-center text-white max-[800px]:flex-[calc(25%_-_((10px_*_3)_/_4))] max-[800px]:max-w-[calc(25%_-_((10px_*_3)_/_4))] max-[540px]:flex-[calc(50%_-_(10px_/_2))] max-[540px]:max-w-[calc(50%_-_(10px_/_2))]">
                 <span class="text-sm font-medium">Kedatangan Bixie</span>
                 <strong class="flex-[100%] max-w-full text-4xl font-bold">{{ $data->kedatangan_bixie }}</strong>
@@ -66,6 +62,51 @@
                 <span class="text-sm font-medium text-blue-600">Total</span>
                 <strong class="flex-[100%] max-w-full text-4xl font-bold text-blue-600">{{ ($data->kedatangan_katalor + $data->kedatangan_bixie + $data->kedatangan_madiun) }}</strong>
             </div>
+        </div>
+    </div>
+    <div class="bg-white shadow-md rounded p-5 mb-5">
+        <div class="mb-5 font-semibold text-lg">
+            <h3>Material Item</h3>
+        </div>
+        <div class="relative overflow-x-auto">
+            <table class="w-full text-sm text-left rtl:text-right text-gray-500 ">
+                <thead class="text-xs text-gray-700 uppercase bg-gray-50 ">
+                    <tr>
+                        <th scope="col" class="px-6 py-3">
+                            Heat Number
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            Jumlah
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            Vendor
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            Tanggal
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if ($materialItem->count() > 0)
+                        @foreach ($materialItem as $item)
+                        <tr class="odd:bg-white even:bg-gray-50 border-b border-gray-200">
+                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap max-[600px]:text-xs">
+                                {{ $item->heat_number }}
+                            </th>
+                            <td class="px-6 py-4">
+                                {{ $item->jumlah }}
+                            </td>
+                            <td class="px-6 py-4">
+                                {{ $item->vendor }}
+                            </td>
+                            <td class="px-6 py-4">
+                                {{ $item->created_at }}
+                            </td>
+                        </tr>
+                        @endforeach
+                    @endif
+                </tbody>
+            </table>
         </div>
     </div>
     <div class="bg-white shadow-md rounded p-5 mb-5">

@@ -32,7 +32,6 @@ class MaterialUpdateRequest extends FormRequest
             'keterangan' => 'nullable',
             'kedatangan_bixie' => 'required',
             'kedatangan_katalor' => 'required',
-            'kedatangan_madiun' => 'required',
             'stock' => 'nullable',
             'qty_ts' => 'required'
         ];
@@ -47,7 +46,6 @@ class MaterialUpdateRequest extends FormRequest
             'dimensi.required' => 'Dimensi tidak boleh kosong',
             'kedatangan_bixie.required' => 'Kedatangan Bixie tidak boleh kosong (isi angka 0 jika material belum ada)',
             'kedatangan_katalor.required' => 'Kedatangan Katalor tidak boleh kosong (isi angka 0 jika material belum ada)',
-            'kedatangan_madiun.required' => 'Kedatangan Madiun tidak boleh kosong (isi angka 0 jika material belum ada)',
             'qty_ts.required' => 'Quantity per Train set tidak boleh kosong'
         ];
     }
